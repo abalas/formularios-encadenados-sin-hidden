@@ -1,0 +1,64 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 640px;
+	margin: 20px auto;
+	padding: 0 15px;
+	color: #222;
+}
+
+header {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	border-bottom: 2px solid #3b6ea5;
+	padding-bottom: 8px;
+	margin-bottom: 20px;
+}
+
+header .version {
+	font-weight: bold;
+	color: #3b6ea5;
+}
+
+header .etapa {
+	margin-left: auto;
+	color: #666;
+}
+
+.error {
+	color: #b00020;
+	background: #fde7ea;
+	border: 1px solid #f3b7c0;
+	padding: 6px 10px;
+}
+
+input[type=submit] {
+	padding: 5px 15px;
+}
+
+.depuracion {
+	margin-top: 40px;
+	font-size: 13px;
+	background: #f4f4f4;
+	border: 1px dashed #aaa;
+	padding: 5px 12px 12px;
+}
+
+.depuracion h3 {
+	font-size: 14px;
+}
+
+.depuracion th {
+	text-align: left;
+	padding-right: 15px;
+	vertical-align: top;
+}
+
+.depuracion td {
+	font-family: monospace;
+	word-break: break-all;
+}
+
+.versiones li {
+	margin: 8px 0;
+}

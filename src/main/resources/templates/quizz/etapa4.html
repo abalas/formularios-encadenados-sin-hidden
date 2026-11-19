@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>MiniQuizz resultado</title>
+	<link rel="stylesheet" th:href="@{/estilos.css}">
+</head>
+<body>
+	<header th:replace="~{quizz/fragmentos :: cabecera}"></header>
+	<h1>Resultado del MiniQuizz</h1>
+	<p>Tus respuestas son:</p>
+	<ol>
+		<li th:each="respuesta : ${respuestas}" th:text="${respuesta}"></li>
+	</ol>
+	<a th:href="@{${base} + '/reiniciar'}">Volver a empezar</a>
+	<aside th:replace="~{quizz/fragmentos :: depuracion}"></aside>
+</body>
+</html>

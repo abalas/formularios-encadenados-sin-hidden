@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>MiniQuizz etapa 3</title>
+	<link rel="stylesheet" th:href="@{/estilos.css}">
+</head>
+<body>
+	<header th:replace="~{quizz/fragmentos :: cabecera}"></header>
+	<form method="post" th:action="@{${base}}">
+		<p th:replace="~{quizz/fragmentos :: error}"></p>
+		<p>Aficiones:</p>
+		<ol>
+			<li th:each="aficion, i : ${listaAficiones}">
+				<input type="checkbox" name="aficiones" th:id="|af${i.index}|" th:value="${aficion}"
+					th:checked="${#lists.contains(seleccionadas, aficion)}" />
+				<label th:for="|af${i.index}|" th:text="${aficion}"></label>
+			</li>
+		</ol>
+		<input type="submit" value="Siguiente" />
+	</form>
+	<aside th:replace="~{quizz/fragmentos :: depuracion}"></aside>
+</body>
+</html>

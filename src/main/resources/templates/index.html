@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>MiniQuizz - D1-UD3</title>
+	<link rel="stylesheet" th:href="@{/estilos.css}">
+</head>
+<body>
+	<h1>MiniQuizz sin campos hidden</h1>
+	<p>Elige con qué versión quieres hacer el quizz. Las tres funcionan igual por fuera,
+		lo que cambia es dónde se guardan las respuestas entre una etapa y otra.</p>
+	<ul class="versiones">
+		<li><a th:href="@{/sesion}">Versión 1 - HttpSession</a></li>
+		<li><a th:href="@{/atributos}">Versión 2 - @SessionAttributes</a></li>
+		<li><a th:href="@{/cookies}">Versión 3 - Cookies</a></li>
+	</ul>
+</body>
+</html>

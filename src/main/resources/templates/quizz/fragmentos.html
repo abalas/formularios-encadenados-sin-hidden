@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- cabecera comun a todas las etapas -->
+<header th:fragment="cabecera">
+	<a th:href="@{/}">&larr; Inicio</a>
+	<span class="version" th:text="${version}">Versión</span>
+	<span class="etapa" th:text="|Etapa ${numEtapa} de 4|">Etapa</span>
+</header>
+
+<!-- mensaje de error de validacion -->
+<p th:fragment="error" class="error" th:if="${errores}" th:text="${errores}"></p>
+
+<!-- caja de depuracion: ensena lo que hay guardado en el servidor / navegador -->
+<aside th:fragment="depuracion" class="depuracion">
+	<h3 th:text="${almacen}">Datos guardados</h3>
+	<table>
+		<tr th:each="dato : ${guardado}">
+			<th th:text="${dato.key}"></th>
+			<td th:text="${dato.value} ?: '(vacío)'"></td>
+		</tr>
+	</table>
+	<a th:href="@{${base} + '/reiniciar'}">Reiniciar quizz</a>
+</aside>
+
+</body>
+</html>

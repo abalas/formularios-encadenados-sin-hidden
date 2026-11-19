@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>MiniQuizz etapa 2</title>
+	<link rel="stylesheet" th:href="@{/estilos.css}">
+</head>
+<body>
+	<header th:replace="~{quizz/fragmentos :: cabecera}"></header>
+	<form method="post" th:action="@{${base}}">
+		<p th:replace="~{quizz/fragmentos :: error}"></p>
+		<p th:text="|Hola ${nombre}, ahora dime tu signo.|"></p>
+		<p>
+			<label for="signo">Signo:</label>
+			<select id="signo" name="signo">
+				<option th:each="s, indice : ${signos}" th:value="${indice.index}" th:text="${s}"
+					th:selected="${signo != null and indice.index == signo}"></option>
+			</select>
+		</p>
+		<input type="submit" value="Siguiente" />
+	</form>
+	<aside th:replace="~{quizz/fragmentos :: depuracion}"></aside>
+</body>
+</html>
